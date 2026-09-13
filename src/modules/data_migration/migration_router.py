@@ -1,7 +1,7 @@
 # modules/data_migration/migration_router.py
 from fastapi import APIRouter
 
-from modules.data_migration.routes.migration_router import migration_router
+from src.modules.data_migration.routes.migration_router import migration_router
 
 data_migration_router = APIRouter(
   prefix="/data_migration", 

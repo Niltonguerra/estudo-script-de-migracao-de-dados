@@ -2,7 +2,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from modules.app import register_routers
+from src.modules.app import register_routers
 
 
 @asynccontextmanager
