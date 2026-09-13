@@ -1,17 +1,20 @@
-from fastapi import FastAPI, HTTPException
 from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
+
 from modules.app import register_routers
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print(f"Starting app")
+    print("Starting app")
     yield
     print("Shutting down...")
 
 
 app = FastAPI(
-    title="Crawler Analyst Investment Service",
-    description="Serviço de coleta de dados financeiros e macroeconômicos.",
+    title="Script Provisorio",
+    description="script provisório.",
     lifespan=lifespan,
 )
 

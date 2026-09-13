@@ -1,0 +1,5 @@
+{
+  "reportUnknownMemberType": "none",
+  "reportUntypedFunctionDecorator": "none",
+  "reportUnknownVariableType": "none"
+}

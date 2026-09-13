@@ -1,8 +1,6 @@
-
-
 class QuoteService:
     async def get_service(self, ticker: str):
-        return 'teste'
+        return "teste"
 
 
 quote_service = QuoteService()
