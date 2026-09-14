@@ -30,3 +30,13 @@ async def get_all_products(start_date: datetime, end_date: datetime):
 @migration_router.get("/users")
 async def get_all_users():
     return await migration_controller.get_all_users()
+
+
+@migration_router.get("/test-error")
+async def test_error():
+    raise ValueError("testando o handler de erro")
+
+
+@migration_router.get("/test-server-error")
+async def test_server_error():
+    raise Exception("testando erro interno do servidor")
