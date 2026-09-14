@@ -12,6 +12,7 @@ help:
 	@echo "  make stop       - Derruba o serviço"
 	@echo "  make logs       - Mostra logs do servidor"
 	@echo "  make logs-db    - Mostra logs do banco de dados"
+	@echo "  make run-test   - roda os testes"
 
 build:
 	docker build --target production -t $(IMAGE_NAME):$(VERSION) .
@@ -28,3 +29,6 @@ logs:
 
 logs-db:
 	docker compose logs -f mongodb
+
+run-test:
+	.venv/bin/pytest tests/ -v

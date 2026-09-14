@@ -1,6 +1,7 @@
 # modules/data_migration/repositories/Migration_repository.py
 from src.modules.data_migration.schema.product_schema import Product
 from src.modules.data_migration.schema.user_schema import User
+from src.modules.data_migration.DTO.ProductFilterSearchDTO import ProductFilterDTO
 
 
 class MigrationRepository:
@@ -25,8 +26,12 @@ class MigrationRepository:
     async def create_user(self, name: str, email: str) -> User:
         return await User(name=name, email=email).insert()
 
-    async def get_all_products(self) -> list[Product]:
-        return await Product.find_all().to_list()
+    async def get_all_products(self, filters: ProductFilterDTO) -> list[Product]:
+        end_date = filters.end_date.replace(second=59, microsecond=999999)
+        return await Product.find(
+            Product.created_at >= filters.start_date,
+            Product.created_at <= end_date,
+        ).to_list()
 
     async def get_all_users(self) -> list[User]:
         return await User.find_all().to_list()

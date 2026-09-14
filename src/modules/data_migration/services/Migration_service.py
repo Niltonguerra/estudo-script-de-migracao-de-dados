@@ -1,4 +1,5 @@
 from src.modules.data_migration.repositories.Migration_repository import migration_repository
+from src.modules.data_migration.DTO.ProductFilterSearchDTO import ProductFilterDTO
 
 
 class MigrationService:
@@ -14,8 +15,8 @@ class MigrationService:
     async def create_user(self, name: str, email: str):
         return await self.repository.create_user(name, email)
     
-    async def get_all_products(self):
-        return await self.repository.get_all_products()
+    async def get_all_products(self, filters: ProductFilterDTO):
+        return await self.repository.get_all_products(filters)
 
     async def get_all_users(self):
         return await self.repository.get_all_users()

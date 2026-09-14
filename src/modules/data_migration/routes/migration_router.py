@@ -1,7 +1,8 @@
 from fastapi import APIRouter
 
 from src.modules.data_migration.controllers.Migration_controller import migration_controller
-
+from src.modules.data_migration.DTO.ProductFilterSearchDTO import ProductFilterDTO
+from datetime import datetime
 migration_router = APIRouter()
 
 
@@ -21,8 +22,9 @@ async def create_user(name: str, email: str):
 
 
 @migration_router.get("/products")
-async def get_all_products():
-    return await migration_controller.get_all_products()
+async def get_all_products(start_date: datetime, end_date: datetime):
+    filters = ProductFilterDTO(start_date=start_date, end_date=end_date)
+    return await migration_controller.get_all_products(filters)
 
 
 @migration_router.get("/users")
