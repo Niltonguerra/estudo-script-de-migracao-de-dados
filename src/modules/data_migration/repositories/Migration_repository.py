@@ -1,7 +1,7 @@
 # modules/data_migration/repositories/Migration_repository.py
 from src.modules.data_migration.schema.product_schema import Product
 from src.modules.data_migration.schema.user_schema import User
-from src.modules.data_migration.DTO.ProductFilterSearchDTO import ProductFilterDTO
+from src.modules.data_migration.DTOs.ProductFilterSearchDTO import ProductFilterDTO
 
 
 class MigrationRepository:

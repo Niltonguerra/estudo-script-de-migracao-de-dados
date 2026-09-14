@@ -1,5 +1,5 @@
 from src.modules.data_migration.repositories.Migration_repository import migration_repository
-from src.modules.data_migration.DTO.ProductFilterSearchDTO import ProductFilterDTO
+from src.modules.data_migration.DTOs.ProductFilterSearchDTO import ProductFilterDTO
 
 
 class MigrationService:

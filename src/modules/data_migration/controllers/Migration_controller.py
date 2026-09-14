@@ -1,6 +1,6 @@
-from src.modules.data_migration.adapters.Other_system_Adapter import other_system_adapter
+from src.modules.data_migration.adapters.Other_system_adapter import other_system_adapter
 from src.modules.data_migration.services.Migration_service import migration_service
-from src.modules.data_migration.DTO.ProductFilterSearchDTO import ProductFilterDTO
+from src.modules.data_migration.DTOs.ProductFilterSearchDTO import ProductFilterDTO
 
 
 class MigrationController:

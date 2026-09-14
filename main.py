@@ -6,6 +6,7 @@ from fastapi import FastAPI
 
 from src.modules.app import register_routers
 from src.infra.database.database_setup import init_database
+from src.infra.exceptions.http_exception_handler import register_exception_handlers
 
 
 @asynccontextmanager
@@ -25,3 +26,4 @@ app = FastAPI(
 )
 
 register_routers(app)
+register_exception_handlers(app)

@@ -1,6 +1,6 @@
 import pytest
 
-from src.modules.data_migration.adapters.Other_system_Adapter import OtherSystemAdapter
+from src.modules.data_migration.adapters.Other_system_adapter import OtherSystemAdapter
 
 
 @pytest.mark.asyncio

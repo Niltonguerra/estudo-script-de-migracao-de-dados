@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from src.modules.data_migration.controllers.Migration_controller import migration_controller
-from src.modules.data_migration.DTO.ProductFilterSearchDTO import ProductFilterDTO
+from src.modules.data_migration.DTOs.ProductFilterSearchDTO import ProductFilterDTO
 from datetime import datetime
 migration_router = APIRouter()
 
