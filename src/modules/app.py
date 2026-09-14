@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from src.modules.data_migration.migration_router import data_migration_router
+from src.modules.data_migration.migration_setup import data_migration_router
 from src.modules.health.health_router import health_router
 
 

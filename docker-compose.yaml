@@ -25,6 +25,8 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=12345678
     volumes:
       - mongodb_data:/data/db
+    logging:
+      driver: "none"
     healthcheck:
       test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
       interval: 10s

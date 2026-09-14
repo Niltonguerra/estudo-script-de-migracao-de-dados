@@ -1,15 +1,24 @@
-from modules.data_migration.services.Migration_service import migration_service
+from src.modules.data_migration.services.Migration_service import migration_service
 
 
-class Migration_controller:
+class MigrationController:
     def __init__(self):
         self.migration_service = migration_service
 
-    async def teste(self, ticker: str):
-        return "teste"
-
-    async def get_controller(self, ticker: str):  # adiciona o parâmetro
+    async def get_controller(self, ticker: str):
         return await self.migration_service.get_service(ticker)
 
+    async def create_product(self, name: str, price: float, description: str):
+        return await self.migration_service.create_product(name, price, description)
 
-migration_controller = Migration_controller()
+    async def create_user(self, name: str, email: str):
+        return await self.migration_service.create_user(name, email)
+    
+    async def get_all_products(self):
+        return await self.migration_service.get_all_products()
+
+    async def get_all_users(self):
+        return await self.migration_service.get_all_users()
+
+
+migration_controller = MigrationController()
